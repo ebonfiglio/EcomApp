@@ -1,7 +1,9 @@
+using EcomApp.Application.Services;
 using EcomApp.Domain.Infrastructure;
 using EcomApp.Domain.Repositories;
 using EcomApp.Infrastructure;
 using EcomApp.Infrastructure.Repositories;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,9 +14,20 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+ConfigurationManager configuration = builder.Configuration;
+
+builder.Services.AddDbContext<EcomAppDbContext>(options =>
+    options.UseCosmos(
+        configuration["CosmosDb:AccountEndpoint"],
+        configuration["CosmosDb:AccountKey"],
+        databaseName: "EcomAppDb"
+    ));
+
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<IOrderRepository, OrderRepository>();
+builder.Services.AddScoped<IProductService, ProductService>();
+builder.Services.AddScoped<IOrderService, OrderService>();
 
 var app = builder.Build();
 
@@ -37,3 +50,5 @@ app.MapControllers();
 app.MapFallbackToFile("/index.html");
 
 app.Run();
+
+public partial class Program { }

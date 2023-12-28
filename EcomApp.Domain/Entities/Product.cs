@@ -20,6 +20,13 @@ namespace EcomApp.Domain.Entities
             Description = description;
             Price = price;
         }
+
+        public void UpdateDetails(string name, string description, decimal price)
+        {
+            Name = name;
+            Description = description;
+            Price = price;
+        }
     }
 
 }

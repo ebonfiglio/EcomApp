@@ -23,6 +23,16 @@ namespace EcomApp.Domain.Entities
             OrderItems = new List<OrderItem>();
             Status = OrderStatus.Pending;
         }
-    }
 
+        public void AddItem(Guid productId, int quantity, decimal unitPrice)
+        {
+            var item = new OrderItem(productId, quantity, unitPrice);
+            OrderItems.Add(item);
+        }
+
+        public void UpdateStatus(OrderStatus newStatus)
+        {
+            Status = newStatus;
+        }
+    }
 }

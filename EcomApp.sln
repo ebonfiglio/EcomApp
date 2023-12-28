@@ -3,15 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcomApp.Server", "EcomApp.Server\EcomApp.Server.csproj", "{5168D98F-62DE-49C1-9272-3E0E90B84AE4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EcomApp.Server", "EcomApp.Server\EcomApp.Server.csproj", "{5168D98F-62DE-49C1-9272-3E0E90B84AE4}"
 EndProject
 Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "ecomapp.client", "ecomapp.client\ecomapp.client.esproj", "{A53E9672-7BE2-44F8-A69D-D97A4D10CBFC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcomApp.Domain", "EcomApp.Domain\EcomApp.Domain.csproj", "{EB09648A-E653-44D1-BC2E-A554FD0079AE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EcomApp.Domain", "EcomApp.Domain\EcomApp.Domain.csproj", "{EB09648A-E653-44D1-BC2E-A554FD0079AE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcomApp.Infrastructure", "EcomApp.Infrastructure\EcomApp.Infrastructure.csproj", "{4D892B33-00CF-4086-9EC0-818354AE6DFD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EcomApp.Infrastructure", "EcomApp.Infrastructure\EcomApp.Infrastructure.csproj", "{4D892B33-00CF-4086-9EC0-818354AE6DFD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcomApp.Application", "EcomApp.Application\EcomApp.Application.csproj", "{63662B35-22E3-48EE-ADBB-3EF9BE6DF32E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EcomApp.Application", "EcomApp.Application\EcomApp.Application.csproj", "{63662B35-22E3-48EE-ADBB-3EF9BE6DF32E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EcomApp.Functions", "EcomApp.Functions\EcomApp.Functions.csproj", "{65CD6034-A94B-4233-B8D1-EF08E9028CAF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcomApp.UnitTest", "EcomApp.UnitTest\EcomApp.UnitTest.csproj", "{EA6FFDAB-0F68-4985-94A5-C3B71C4B04AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcomApp.IntegrationTest", "EcomApp.IntegrationTest\EcomApp.IntegrationTest.csproj", "{9D4848B1-E2EC-4C67-A888-EAC4985F5734}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +47,18 @@ Global
 		{63662B35-22E3-48EE-ADBB-3EF9BE6DF32E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{63662B35-22E3-48EE-ADBB-3EF9BE6DF32E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{63662B35-22E3-48EE-ADBB-3EF9BE6DF32E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65CD6034-A94B-4233-B8D1-EF08E9028CAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65CD6034-A94B-4233-B8D1-EF08E9028CAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65CD6034-A94B-4233-B8D1-EF08E9028CAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65CD6034-A94B-4233-B8D1-EF08E9028CAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA6FFDAB-0F68-4985-94A5-C3B71C4B04AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA6FFDAB-0F68-4985-94A5-C3B71C4B04AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA6FFDAB-0F68-4985-94A5-C3B71C4B04AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA6FFDAB-0F68-4985-94A5-C3B71C4B04AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D4848B1-E2EC-4C67-A888-EAC4985F5734}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D4848B1-E2EC-4C67-A888-EAC4985F5734}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D4848B1-E2EC-4C67-A888-EAC4985F5734}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D4848B1-E2EC-4C67-A888-EAC4985F5734}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
