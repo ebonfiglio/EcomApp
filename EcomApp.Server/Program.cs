@@ -7,7 +7,16 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll", policy =>
+    {
+        policy.AllowAnyOrigin()
+              .AllowAnyMethod()
+              .AllowAnyHeader();
+    });
+});
+
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -20,7 +29,7 @@ builder.Services.AddDbContext<EcomAppDbContext>(options =>
     options.UseCosmos(
         configuration["CosmosDb:AccountEndpoint"],
         configuration["CosmosDb:AccountKey"],
-        databaseName: "EcomAppDb"
+        databaseName: "ecomapp"
     ));
 
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
@@ -30,7 +39,7 @@ builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<IOrderService, OrderService>();
 
 var app = builder.Build();
-
+app.UseCors("AllowAll");
 app.UseDefaultFiles();
 app.UseStaticFiles();
 

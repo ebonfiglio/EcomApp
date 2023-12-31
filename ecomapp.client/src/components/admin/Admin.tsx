@@ -24,8 +24,8 @@ function Admin() {
                 </nav>
                 <main role="main" className="col-md-9 ml-sm-auto col-lg-10 px-md-4">
                     <Routes>
-                    <Route path="/admin/manage-orders" element={<ManageOrders />} />
-                     <Route path="/admin/manage-products" element={<ManageProducts />} />
+                    <Route path="manage-orders" element={<ManageOrders />} />
+                     <Route path="manage-products" element={<ManageProducts />} />
                     </Routes>
                 </main>
             </div>

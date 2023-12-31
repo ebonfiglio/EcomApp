@@ -14,6 +14,8 @@ namespace EcomApp.Infrastructure
         public DbSet<Product> Products { get; set; }
         public DbSet<Order> Orders { get; set; }
 
+        public DbSet<OrderItem> OrderItems { get; set; }
+
         public EcomAppDbContext(DbContextOptions<EcomAppDbContext> options)
         : base(options)
         {
@@ -22,6 +24,18 @@ namespace EcomApp.Infrastructure
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<Product>()
+           .ToContainer("Products")
+           .HasPartitionKey(p => p.Id);
+
+            modelBuilder.Entity<Order>()
+                .ToContainer("Orders")
+                .HasPartitionKey(o => o.Id);
+
+            modelBuilder.Entity<OrderItem>()
+                .ToContainer("OrderItems")
+                .HasPartitionKey(oi => oi.Id);
         }
     }
 }
