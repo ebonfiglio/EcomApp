@@ -26,16 +26,13 @@ namespace EcomApp.Infrastructure
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.Entity<Product>()
-           .ToContainer("Products")
-           .HasPartitionKey(p => p.Id);
+           .ToContainer("Products");
 
             modelBuilder.Entity<Order>()
-                .ToContainer("Orders")
-                .HasPartitionKey(o => o.Id);
+                .ToContainer("Orders");
 
             modelBuilder.Entity<OrderItem>()
-                .ToContainer("OrderItems")
-                .HasPartitionKey(oi => oi.Id);
+                .ToContainer("OrderItems");
         }
     }
 }
